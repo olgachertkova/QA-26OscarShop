@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void openBrowser(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -19,7 +19,7 @@ public class TestBase {
 
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
         driver.quit();
     }
