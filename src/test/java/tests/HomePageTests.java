@@ -15,12 +15,14 @@ public class HomePageTests extends TestBase{
     public void pageInit(){
         homePage = PageFactory.initElements(driver, HomePage.class);
         productPage = PageFactory.initElements(driver, ProductPage.class);
+
     }
     @Test (groups = "smoke")
-    public void userCanSelectProductInMenuTest(){
+    public void userCanSelectProductInMenuTest() throws InterruptedException {
         homePage.selectCategory();
-        homePage.selectProduct();
+        homePage.selectProduct(1);
         Assert.assertTrue(productPage.isItProductPage());
 
     }
+
 }

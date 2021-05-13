@@ -20,7 +20,14 @@ public class HomePage extends PageBase{
         submenuBooks.click();
     }
 
-    public void selectProduct() {
-        productList.get(0).click();
+    public void selectProduct(int num) {
+        try {
+            WebElement book = productList.get(num-1);
+            waitUntilElementClickable(book, 50);
+            book.click();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Book is not visible");
+        }
     }
 }
