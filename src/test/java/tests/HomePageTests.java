@@ -21,6 +21,7 @@ public class HomePageTests extends TestBase{
     public void userCanSelectProductInMenuTest() throws InterruptedException {
         homePage.selectCategory();
         homePage.selectProduct(1);
+        System.out.println("Hello");
         Assert.assertTrue(productPage.isItProductPage());
 
     }
